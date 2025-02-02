@@ -1,0 +1,448 @@
+@font-face {
+    font-family: "Grafiiti";
+    src: url("/Assets/font/Act_Of_Rejection.ttf");
+}
+:root{
+    --principal-color-background:#000711;
+    --font-size-logo-mobile:3rem;
+    --font-size-logo-tablet:4rem;
+    --font-size-logo-tablet-desktop: 5rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Grafiiti";
+}
+body::-webkit-scrollbar { 
+    display: none;
+}
+/* Estilos con base en mobile */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: var(--principal-color-background);
+    width: 100%;
+    height: 40px;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+}
+.navbar .logo{
+    background: linear-gradient(90deg, rgba(2,103,227,1) 20%, rgba(235,0,118,1) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: var(--font-size-logo-mobile);
+    font-weight: bold;
+    height: auto;
+    width: auto;
+}
+.navbar .help-icon{
+    border: none;
+    background: none;
+    color: white;
+    font-family: none;
+    font-size: 0.7rem;
+    width: auto;
+    height: auto;
+}
+.navbar .help-icon img{
+    filter: invert(1);
+    width: 20px;
+    height: 20px;
+}
+#hero{
+    margin-top: 40px;
+    padding: 5px;
+    width: 100%;
+    height: calc(100vh - 40px);
+    background-color: var(--principal-color-background);
+    z-index: 1;
+}
+#hero .logo-up{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.graffiti {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 2;
+}
+.graffiti-1 {
+    left: 5%;
+    top: 5%;
+    width: 120px;
+    height: 120px;
+    background-image: url('/Assets/Imgs/GWkmT1Fb0AARQ3A.png');
+}
+.graffiti-2 {
+    left: 40%;
+    top: 40%;
+    width: 140px;
+    height: 80px;
+    background-image: url('/Assets/Imgs/giphy-preview.gif');
+}
+
+.graffiti-3 {
+    left: 55%;
+    top: 0%;
+    width: 140px;
+    height: 140px;
+    background-image: url('/Assets/Imgs/what.gif');
+}
+
+.graffiti-4 {
+    left: 15%;
+    top: 50%;
+    width: 50px;
+    height: 70px;
+    background-image: url('/Assets/Imgs/360fx360f.png');
+}
+
+.graffiti-5 {
+    left: 0%;
+    top: 35%;
+    width: 60px;
+    height: 80px;
+    background-image: url('/Assets/Imgs/330x192.png');
+}
+
+.graffiti-6 {
+    left: 60%;
+    top: 10%;
+    width: 100px;
+    height: 60px;
+    background-image: url('/Assets/Imgs/glowing-neon-crown-free-png.webp');
+}
+
+.graffiti-7 {
+    left: 5%;
+    top: 20%;
+    width: 120px;
+    height: 140px;
+    background-image: url('/Assets/Imgs/cool.gif');
+}
+.graffiti-8 {
+    left:60%;
+    top: 30%;
+    width: 120px;
+    height: 140px;
+    background-image: url('/Assets/Imgs/oh\ no.png');
+}
+#hero .img-logo{
+    border-radius: 150px;
+    width: auto;
+    height: 180px;
+    margin-top: 15px;
+    z-index: 3;
+}
+#hero .links-social{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+#hero .links-social.show{
+    opacity: 1;
+    transform: translateY(0px);
+}
+#hero .links-social .boton-redes{
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    border-radius: 20px;
+    z-index: 3;
+}
+#hero .links-social .boton-redes img{
+    width: 40px;
+    height: auto;
+    border-radius: 20px;
+    z-index: 3;
+}
+#hero .links-social .boton-redes:hover {
+    transform: scale(1.1)
+}
+#hero .links-social .boton-redes:nth-child(1):hover{
+    box-shadow: -3px 5px 10px 0px rgba(93,106,242,1);
+}
+
+#hero .links-social .boton-redes:nth-child(2):hover{
+    box-shadow: 1px 5px 10px 0px rgba(255,0,51,1);
+}
+#hero .links-social .boton-redes:nth-child(3):hover{
+    box-shadow: 0px 5px 10px 0px rgba(216,47,181,1);
+}
+#hero .links-social .boton-redes:nth-child(4):hover{
+    box-shadow: 1px 5px 10px 0px rgba(74,235,103,1);
+}
+#hero .links-social .boton-redes:nth-child(5):hover{
+    box-shadow: 3px 5px 10px 0px rgba(178,16,237,1);
+}
+#servers-discord{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none;
+    background: none;
+    position: absolute;
+    top: 80%;
+    left: 4vh;
+    width: auto;
+    height: auto;
+}
+
+#servers-discord li button{
+    border: none;
+    background: none;
+    color: white;
+    width: auto;
+    height: auto;
+}
+
+#servers-discord li button img{
+    border-radius: 100%;
+    width: 32px;
+    height: 34px;
+}
+#servers-discord li button p{
+    display: none;
+}
+#servers-discord.show {
+    display: flex;
+}
+/*Estilos mobile limite*/
+@media (min-width: 450px) and (max-width: 767px) {
+    #hero .img-logo{
+        height: 230px;
+    }
+    .graffiti-1 {
+        left: 10%;
+        top: 5%;
+        width: 150px;
+        height: 150px;
+    }
+    .graffiti-2 {
+        left: 20%;
+        top: 40%;
+        width: 250px;
+        height: 150px;
+    }
+    
+    .graffiti-3 {
+        left: 65%;
+        top: 3%;
+        width: 140px;
+        height: 140px;
+    }
+    
+    .graffiti-4 {
+        left: 60%;
+        top: 50%;
+        width: 150px;
+        height: 70px;
+    }
+    
+    .graffiti-5 {
+        left: 10%;
+        top: 45%;
+        width: 60px;
+        height: 80px;
+    }
+    
+    .graffiti-6 {
+        left: 60%;
+        top: 10%;
+        width: 100px;
+        height: 80px;
+    }
+    
+    .graffiti-7 {
+        left: 5%;
+        top: 20%;
+        width: 120px;
+        height: 140px;
+    }
+    .graffiti-8 {
+        left:70%;
+        top: 30%;
+        width: 120px;
+        height: 140px;
+    }
+    #hero .links-social{
+        height: 150px;
+    }
+    #hero .links-social .boton-redes img{
+        width: 60px;
+    }
+    #servers-discord{
+        top: 70%;
+    }
+    #servers-discord li button img{
+        width: 48px;
+        height: 50px;
+    }
+}
+/*Estilos de tablet*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar {
+        height: 60px;
+    }
+    .navbar .logo{
+        font-size: var(--font-size-logo-tablet);
+    }
+    #hero .img-logo{
+        height: 300px;
+    }
+    .graffiti-1 {
+        left: 10%;
+        top: 5%;
+        width: 150px;
+        height: 150px;
+    }
+    .graffiti-2 {
+        left: 20%;
+        top: 40%;
+        width: 250px;
+        height: 150px;
+    }
+    
+    .graffiti-3 {
+        left: 80%;
+        top: 3%;
+        width: 140px;
+        height: 140px;
+    }
+    
+    .graffiti-4 {
+        left: 60%;
+        top: 50%;
+        width: 150px;
+        height: 70px;
+    }
+    
+    .graffiti-5 {
+        left: 10%;
+        top: 45%;
+        width: 60px;
+        height: 80px;
+    }
+    
+    .graffiti-6 {
+        left: 60%;
+        top: 10%;
+        width: 100px;
+        height: 80px;
+    }
+    
+    .graffiti-7 {
+        left: 5%;
+        top: 20%;
+        width: 120px;
+        height: 140px;
+    }
+    .graffiti-8 {
+        left:80%;
+        top: 30%;
+        width: 120px;
+        height: 140px;
+    }
+    #hero .links-social{
+        height: 100px;
+    }
+    #hero .links-social .boton-redes img{
+        width: 70px;
+    }
+}
+/*Estilos de Desktop*/
+@media (min-width: 1025px) {
+    .navbar {
+        height: 60px;
+    }
+    .navbar .logo{
+        font-size: var(--font-size-logo-tablet-desktop);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .logo.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .navbar .help-icon:hover{
+        cursor: pointer;
+    }
+    #hero .img-logo{
+        height: 320px;
+    }
+    .graffiti-1 {
+        left: 25%;
+        top: 0%;
+        width: 300px;
+        height: 300px;
+    }
+    .graffiti-2 {
+        left: 35%;
+        top: 40%;
+        width: 350px;
+        height: 250px;
+    }
+    .graffiti-3 {
+        left: 60%;
+        top: 3%;
+        width: 390px;
+        height: 300px;
+    }
+    .graffiti-4 {
+        left: 55%;
+        top: 50%;
+        width: 200px;
+        height: 170px;
+    }
+    .graffiti-5 {
+        left: 30%;
+        top: 40%;
+        width: 120px;
+        height: 140px;
+    }
+    .graffiti-6 {
+        left: 55%;
+        top: 9%;
+        width: 140px;
+        height: 120px;
+    }
+    .graffiti-7 {
+        left: 15%;
+        top: 20%;
+        width: 320px;
+        height: 340px;
+    }
+    .graffiti-8 {
+        left:60%;
+        top: 30%;
+        width: 220px;
+        height: 240px;
+    }
+    #hero .links-social{
+        height: 300px;
+    }
+    #hero .links-social .boton-redes img{
+        width: 90px;
+    }
+}
