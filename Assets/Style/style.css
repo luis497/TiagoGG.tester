@@ -7,6 +7,7 @@
     --font-size-logo-mobile:3rem;
     --font-size-logo-tablet:4rem;
     --font-size-logo-tablet-desktop: 5rem;
+    --font-family:"Grafiiti";
 }
 *{
     margin: 0;
@@ -15,7 +16,7 @@
 }
 html {
     font-size: 62.5%;
-    font-family: "Grafiiti";
+    font-family: var(--font-family);
 }
 body::-webkit-scrollbar { 
     display: none;
@@ -32,16 +33,26 @@ body::-webkit-scrollbar {
     position: fixed; 
     top: 0; 
     left: 0; 
-    z-index: 1000; 
+    z-index: 1000;
+    overflow: visible;
 }
 .navbar .logo{
     background: linear-gradient(90deg, rgba(2,103,227,1) 20%, rgba(235,0,118,1) 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: var(--font-size-logo-mobile);
+    font-size: 3rem;
     font-weight: bold;
-    height: 40;
-    width: 100;
+    width: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    align-items: center;
+    line-height: 1.2;
+    z-index: 7;
+}
+.logo.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 .navbar .help-icon{
     border: none;
@@ -59,9 +70,8 @@ body::-webkit-scrollbar {
 }
 #hero{
     margin-top: 40px;
-    padding: 5px;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 20px);
     background-color: var(--principal-color-background);
     z-index: 1;
 }
@@ -77,7 +87,7 @@ body::-webkit-scrollbar {
     background-size: cover;
     background-position: center;
     opacity: 0.2;
-    z-index: 2;
+    z-index: 3;
 }
 .graffiti-1 {
     left: 5%;
@@ -136,16 +146,57 @@ body::-webkit-scrollbar {
 .graffiti-8 {
     left:60%;
     top: 30%;
-    width: 120px;
+    width: 130px;
     height: 140px;
     background-image: url('./Imgs/oh\ no.png');
+}
+.pintura{
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: 2;
+}
+.pintura-1{
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-image: url('./Imgs/PINTURA/1.png');
+}
+.pintura-2{
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Imgs/PINTURA/3.png');
+}
+.pintura-3{
+    top: 80%;
+    left: 40%;
+    width: 180px;
+    height: 110px;
+    background-image: url('./Imgs/PINTURA/9.webp');
+}
+.pintura-4{
+    top: 70%;
+    left: 2%;
+    width: 100px;
+    height: 150px;
+    background-image: url('./Imgs/PINTURA/10.png');
+}
+.pintura-5{
+    top: 55%;
+    left: 30%;
+    width: 130px;
+    height: 150px;
+    background-image: url('./Imgs/PINTURA/11.png');
 }
 #hero .img-logo{
     border-radius: 150px;
     width: auto;
     height: 180px;
     margin-top: 15px;
-    z-index: 3;
+    z-index: 4;
 }
 #hero .links-social{
     width: 100%;
@@ -153,13 +204,14 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    z-index: 3;
+    position: relative;
+    z-index: 5;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 2s ease, transform 2s ease;
 }
 #hero .links-social.show{
-    opacity: 1;
+    opacity: 4;
     transform: translateY(0px);
 }
 #hero .links-social .boton-redes{
@@ -168,13 +220,13 @@ body::-webkit-scrollbar {
     background: none;
     border: none;
     border-radius: 20px;
-    z-index: 3;
+    z-index: 5;
 }
 #hero .links-social .boton-redes img{
-    width: 55px;
+    width: 60px;
     height: auto;
     border-radius: 20px;
-    z-index: 3;
+    z-index: 5;
 }
 #hero .links-social .boton-redes:hover {
     transform: scale(1.1)
@@ -201,11 +253,12 @@ body::-webkit-scrollbar {
     gap: 5px;
     list-style: none;
     background: none;
-    position: absolute;
+    position:absolute;
     top: 80%;
-    left: 4vh;
+    left: 8%;
     width: auto;
     height: auto;
+    z-index: 5;
 }
 #servers-discord li button{
     border: none;
@@ -215,6 +268,17 @@ body::-webkit-scrollbar {
     height: auto;
     display: flex;
     align-items: center;
+    border-radius: 15px;
+    padding: 8px;
+}
+ #servers-discord li button:hover {
+    transform: scale(1.1)
+}
+#servers-discord li:first-child button:hover {
+    box-shadow: 1px 1px 12px 0px rgba(1,194,201,1);
+}
+ #servers-discord li:last-child button:hover {
+    box-shadow: 1px 1px 12px 0px rgba(255,255,255,1);
 }
 #servers-discord li button img{
     border-radius: 100%;
@@ -244,35 +308,30 @@ body::-webkit-scrollbar {
         width: 250px;
         height: 150px;
     }
-    
     .graffiti-3 {
         left: 65%;
         top: 3%;
         width: 140px;
         height: 140px;
     }
-    
     .graffiti-4 {
         left: 60%;
         top: 50%;
         width: 150px;
         height: 70px;
     }
-    
     .graffiti-5 {
         left: 10%;
         top: 45%;
         width: 60px;
         height: 80px;
     }
-    
     .graffiti-6 {
         left: 60%;
         top: 10%;
         width: 100px;
         height: 80px;
     }
-    
     .graffiti-7 {
         left: 5%;
         top: 20%;
@@ -282,7 +341,7 @@ body::-webkit-scrollbar {
     .graffiti-8 {
         left:70%;
         top: 30%;
-        width: 120px;
+        width: 140px;
         height: 140px;
     }
     #hero .links-social{
@@ -360,14 +419,46 @@ body::-webkit-scrollbar {
     .graffiti-8 {
         left:80%;
         top: 30%;
-        width: 120px;
+        width: 140px;
         height: 140px;
+    }
+    .pintura-3{
+        top: 80%;
+        left: 40%;
+        width: 270px;
+        height: 200px;
+        background-image: url('./Imgs/PINTURA/9.webp');
+    }
+    .pintura-4{
+        top: 70%;
+        left: 2%;
+        width: 230px;
+        height: 250px;
+        background-image: url('./Imgs/PINTURA/10.png');
+    }
+    .pintura-5{
+        top: 55%;
+        left: 30%;
+        width: 200px;
+        height: 200px;
+        background-image: url('./Imgs/PINTURA/11.png');
     }
     #hero .links-social{
         height: 100px;
     }
     #hero .links-social .boton-redes img{
-        width: 70px;
+        width: 90px;
+    }
+    #servers-discord{
+        top: 70%;
+        left: 8%;
+    }
+    #servers-discord li button img{
+        width: 80px;
+        height: 82px;
+    }
+    #servers-discord li button p{
+        font-size: 2rem;
     }
 }
 /*Estilos de Desktop*/
@@ -377,13 +468,6 @@ body::-webkit-scrollbar {
     }
     .navbar .logo{
         font-size: var(--font-size-logo-tablet-desktop);
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .logo.show {
-        opacity: 1;
-        transform: translateY(0);
     }
     .navbar .help-icon:hover{
         cursor: pointer;
@@ -436,13 +520,48 @@ body::-webkit-scrollbar {
     .graffiti-8 {
         left:60%;
         top: 30%;
-        width: 220px;
+        width: 230px;
         height: 240px;
+    }
+    .pintura-3{
+        top: 80%;
+        left: 40%;
+        width: 450px;
+        height: 300px;
+        background-image: url('./Imgs/PINTURA/9.webp');
+    }
+    .pintura-4{
+        top: 70%;
+        left: 10%;
+        width: 230px;
+        height: 250px;
+        background-image: url('./Imgs/PINTURA/10.png');
+    }
+    .pintura-5{
+        top: 80%;
+        left: 80%;
+        width: 200px;
+        height: 200px;
+        background-image: url('./Imgs/PINTURA/11.png');
     }
     #hero .links-social{
         height: 300px;
     }
     #hero .links-social .boton-redes img{
         width: 90px;
+    }
+    #servers-discord{
+        top: 75%;
+        left: 10%;
+    }
+    #servers-discord li:first-child button{
+        margin-bottom: 15px;
+    }
+    #servers-discord li button img{
+        width: 85px;
+        height: 87px;
+    }
+    #servers-discord li button p{
+        font-size: 3rem;
     }
 }

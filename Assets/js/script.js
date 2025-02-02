@@ -14,6 +14,12 @@ function whatsappLink() {
 function igLink() {
     window.open('https://www.instagram.com/tiagogg._?igsh=MTRrZW1wdW5kazk4YQ==', '_blank');
     }
+ function TiagoCommunityLink() {
+    window.open('https://discord.gg/wQH2Verb', '_blank');
+    }
+ function RageQuitLink() {
+    window.open('https://discord.gg/fhbrtrmR', '_blank');
+}    
 function showLogosRedes() {
     const logos = document.querySelectorAll('.logo');
     const redes = document.querySelectorAll('.links-social')
